@@ -10,7 +10,7 @@ class App extends Component{
 
       // "phrase" is the text entered by the user - right now there are test words hard coded to make the process of testing your code faster and easier
       // ACTION ITEM: when you are ready for your full user experience, delete the test words so phrase is assigned an empty string
-      phrase: "",
+      phrase: "alpha through yummy squeal queen fry",
       // "phraseTranslated" is what the user will see appear on the page as Pig Latin, it starts as the preset message and updates when your user clicks the "submit" button
       phraseTranslated: "This is where your translated sentence will appear."
     }
@@ -35,26 +35,19 @@ class App extends Component{
        // push that slice to the end of the word
        // add "ay" at the end of the word
 
-    
-        var firstVowel = currentWord.match(/[aeiou]/);
-        //console.log(firstVowel);
-        var firstPosition = currentWord.indexOf(firstVowel)
-        //console.log(firstPosition);
+      let vowelsArray = currentWord.split("").filter(vowel => {
+        return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
+      })
+      console.log("vowelsArray:", vowelsArray)
 
-        if(firstPosition === -1){
-          var why = currentWord.indexOf("y")
-          return currentWord.slice(why) + currentWord.slice(0, why) + "ay"
 
-        } else if (currentWord[0] === "q" && currentWord[1] === "u"){ 
-          return currentWord.slice(2) + currentWord.slice(0, 2) + "ay";
-    
-        } else if (firstPosition > 0) {
-          return currentWord.slice(firstPosition) + currentWord.slice(0, firstPosition) + "ay";
+      // your code here!
 
-        } else {
-            return currentWord + "way";
-        }
-    
+      // Remember: console.log is your friend :)
+
+
+      // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
+      return currentWord
     })
 
 
